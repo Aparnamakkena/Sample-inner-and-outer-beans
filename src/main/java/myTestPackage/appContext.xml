@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="fruit" class="food.Fruit">
+
+</bean>
+<bean id="dairy" class="food.Dairy">
+</bean>
+<bean id="meat" class="food.Meat"></bean>
+
+<bean id="meal" class="food.Meal">
+	<property name="fruit" ref="fruit" ></property>
+	<property name="dairy" ref="dairy"></property>
+	<property name="meat" ref="meat"></property>
+</bean>
+</beans>
