@@ -12,11 +12,13 @@ public class myApp {
 
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("myTestPackage/appContext.xml");
 	
-		Meal myNormalMeal = new Meal();
-		System.out.println("Normal meal: " + myNormalMeal.whatIsInThisMeal());
 		
 		Meal myspringMeal = appContext.getBean("meal",Meal.class);
 		System.out.println("spring meal: " + myspringMeal.whatIsInThisMeal());
+		
+		Meal mIb = appContext.getBean("mealOuterBean", Meal.class);
+		System.out.println("Description: "+ "\n" + mIb.whatIsInThisMeal());
+		
 	}
 
 }

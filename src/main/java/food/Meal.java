@@ -24,13 +24,23 @@ public class Meal {
 		this.dairy = dairy;
 	}
 	
+	public Meal() {}
+
+	public Meal(Fruit f,Meat m,Dairy d)
+	{
+		this.fruit=f;
+		this.meat=m;
+		this.dairy=d;
+		
+	}
+	
 	public String whatIsInThisMeal() {
 		
 		String answer ="This meal contains: ";
 		
-		if(fruit != null) answer += "some fruit ";
-		if(dairy != null) answer += "some dairy ";
-		if(meat != null) answer += "some meat ";
+		if(fruit != null) answer += fruit.talkAboutYourself() + "\n";
+		if(dairy != null) answer += dairy.talkAboutYourself() + "\n";
+		if(meat != null) answer += meat.talkAboutYourself() + "\n";
 		return answer;
 	}
 
